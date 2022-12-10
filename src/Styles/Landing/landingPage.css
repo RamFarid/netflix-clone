@@ -109,10 +109,22 @@ section.lp-s p.secondary {
 }
 
 @media screen and (max-width: 950px) {
+  .Landing__Page {
+    font-size: 14.4px;
+  }
   .lp-s {
     flex-direction: column;
     padding: 20px 0 14px 0;
+    width: 100%;
   }
+  .Landing__Page .faq-item {
+    font-size: inherit !important;
+  }
+  .Landing__Page .faq-item svg {
+    width: 20px;
+    height: 20px;
+  }
+
   .lp-s.download,
   .lp-s.kids {
     flex-direction: column-reverse;
@@ -120,12 +132,68 @@ section.lp-s p.secondary {
   .lp-s p.secondary {
     max-width: 1000px !important;
     text-align: center;
+    margin: 0 10px;
   }
   .lp-s .primary {
     text-align: center;
     margin-top: 15px;
+    font-size: 26px !important;
   }
-  .rhs {
+  .Landing__Page .header__top {
+    padding: 15px 14px;
+  }
+  .Landing__Page .header__top .signin {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+  .Landing__Page section .lhs,
+  .Landing__Page section .rhs {
     padding: unset;
+    width: 100%;
+  }
+  .Landing__Page section .lhs img,
+  .Landing__Page section .rhs img {
+    width: 100% !important;
+  }
+  section.everywhere .rhs video {
+    position: absolute;
+    top: 36px;
+    left: 77px;
+    width: 257px;
+  }
+  section.devices .rhs video {
+    position: absolute;
+    left: 60px;
+    top: 69px;
+    width: 297px;
+  }
+  .input-co {
+    margin: 0 10px;
+    width: unset !important;
+  }
+  .ca-text {
+    margin: 0 10px;
+    text-align: center;
+  }
+  .input-co button {
+    padding: 0 4px;
+    margin: auto;
+    font-size: 14.4px;
+  }
+  .Landing__Page .content h2 {
+    font-size: 28px;
+  }
+  .Landing__Page .content p {
+    font-size: 18px;
+  }
+  .Landing__Page .content {
+    line-height: 1.5;
+    width: 100%;
+  }
+  section.faq ul.faq {
+    width: 100%;
+  }
+  section.faq h2 {
+    font-size: 26px;
   }
 }

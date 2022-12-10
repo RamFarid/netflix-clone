@@ -5,10 +5,10 @@ function VideoMItem({ img, alt, videoId, requestFor }) {
   const redirectTo = useNavigate()
   const singlePageHandle = () => {
     if (requestFor === 'tv') {
-      redirectTo(`/tv/${videoId}`)
+      redirectTo(`/browse/tv/${videoId}`)
       return
     }
-    redirectTo(`/movie/${videoId}`)
+    redirectTo(`/browse/movie/${videoId}`)
   }
   return (
     <div className='SLider__Item' onClick={singlePageHandle}>

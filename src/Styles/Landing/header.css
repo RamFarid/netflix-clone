@@ -24,6 +24,8 @@ header.lp {
 }
 
 .header__top img {
+  min-width: 88px;
+  width: 23%;
   max-width: 150px;
 }
 
