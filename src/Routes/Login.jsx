@@ -9,8 +9,8 @@ import { AuthContext } from '../Contexts/AuthContext'
 
 import '../Styles/Login/login.css'
 function Login() {
-  const EMAIL = process.env.REACT_APP_EMAIL
-  const PASSWORD = process.env.REACT_APP_PASSWORD
+  const EMAIL = 'workprojects22@gmail.com'
+  const PASSWORD = '123456'
   const redirectTo = useNavigate()
   const localStorage = useContext(AuthContext)
   const [isValidation, setValidation] = useState(false)

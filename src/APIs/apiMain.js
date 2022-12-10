@@ -220,7 +220,7 @@ export const Request = {
 const tmdb = axios.create({
   baseURL: Request.baseURL,
   params: {
-    api_key: process.env.REACT_APP_API_KEY,
+    api_key: 'f37642900de251482713dd66932b1ab9',
   },
 })
 

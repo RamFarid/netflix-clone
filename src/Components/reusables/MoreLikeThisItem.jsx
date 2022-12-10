@@ -6,6 +6,7 @@ import '../../Styles/Browse/more-like-this.css'
 import { useSearchParams } from 'react-router-dom'
 
 function MoreLikeThisItem({ movie }) {
+  // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams()
   const requestFor = searchParams.get('requestFor')
   const img = Request.imgGenerator(movie)
