@@ -1,0 +1,39 @@
+.Footer__Browse {
+  padding-top: 70px;
+  color: #737373;
+}
+
+.Footer__Browse .container {
+  width: 72%;
+  height: fit-content;
+}
+
+.Footer__Browse .footer__grid {
+  margin: 0;
+}
+
+.Footer__Browse .social-links-co {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.Footer__Browse button {
+  display: block;
+  background-color: transparent;
+  color: #737373;
+  border: 1px solid #737373;
+  margin: 20px 0;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.Footer__Browse button:hover {
+  color: #fff;
+}
+
+.Footer__Browse .copyrights {
+  font-size: 11px;
+  margin-bottom: 10px;
+}

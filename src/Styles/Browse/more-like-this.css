@@ -1,0 +1,89 @@
+.pop-up-info .title {
+  font-size: 24px;
+  margin-top: 40px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.pop-up-info .more-like-this__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  font-size: 16px;
+  max-height: 1123px;
+  overflow: hidden;
+  position: relative;
+}
+
+.pop-up-info .more-like-this__container.active {
+  max-height: unset;
+}
+
+.pop-up-info .more-like-this__container .more-like-this__item {
+  background-color: #2f2f2f;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.pop-up-info .more-like-this__container .info {
+  padding: 16px;
+}
+
+.pop-up-info .more-like-this__container .info .top {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.pop-up-info .more-like-this__container .info .top .left {
+  display: flex;
+  flex-direction: column;
+}
+
+.pop-up-info .more-like-this__container .more-like-this__item .img-co {
+  width: 100%;
+  height: 34%;
+}
+
+.pop-up-info .more-like-this__container .more-like-this__item img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
+}
+
+.pop-up-info .more-like-this__container .more-like-this__item .description {
+  color: #d2d2d2;
+  font-size: 14px;
+  margin-bottom: 38px;
+}
+
+.pag-co {
+  position: relative;
+  margin-top: 20px;
+}
+
+.pag-co .pag-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  background-color: rgba(42, 42, 42, 0.6);
+  border: 2px solid hsla(0, 0%, 100%, 0.5);
+  min-width: 36px;
+  min-height: 36px;
+  max-width: 42px;
+  max-height: 42px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.pag-co .pag-btn:hover {
+  background-color: #545454;
+}

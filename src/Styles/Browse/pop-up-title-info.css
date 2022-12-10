@@ -1,0 +1,18 @@
+.pop-up-info .system {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.pop-up-info .system .SLider__Item {
+  max-width: 215px;
+  width: 215px;
+  margin-top: 12px;
+}
+
+.pop-up-info .data h2 {
+  margin: 67px 0;
+  text-align: center;
+  font-size: 35.3px;
+}

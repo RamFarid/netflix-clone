@@ -1,0 +1,35 @@
+.Header__Mobile {
+  display: flex;
+  align-items: center;
+  background-image: url(https://assets.nflxext.com/ffe/siteui/akira/fallback/header_gradient.png);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  padding: 0 20px;
+  z-index: 999;
+  gap: 20px;
+}
+
+.Header__Mobile img {
+  max-width: 84px;
+}
+
+.Header__Mobile input {
+  margin-left: auto;
+  outline: none;
+  border: none;
+  width: 178px;
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  background: #141414;
+  font-size: 16px;
+  color: #fff;
+}
+
+@media screen and (max-width: 500px) {
+  .Header__Mobile input {
+    width: 114px;
+  }
+}

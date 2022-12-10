@@ -1,0 +1,46 @@
+section.faq h2 {
+  margin: 0 auto;
+  width: fit-content;
+  font-size: 45px;
+  margin-top: 16px;
+}
+section.faq ul.faq {
+  margin: 40px auto 70px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+  gap: 12px;
+  width: 80%;
+}
+
+section.faq ul.faq li.faq-item {
+  background-color: #303030;
+  width: 100%;
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+section.faq ul.faq li.faq-item span {
+  padding: 17px 24px;
+  user-select: none;
+  justify-content: space-between;
+}
+
+section.faq ul.faq li.faq-item div.answer {
+  border-top: 1px solid #000;
+  cursor: text;
+  transition: all 0.4s ease;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0px 24px;
+}
+
+section.faq ul.faq li.faq-item.active div.answer {
+  padding: 12px 24px;
+  transition: all 0.4s ease;
+  max-height: 1200px;
+}

@@ -1,0 +1,156 @@
+.Login__Page {
+  background-image: url('../../Assets/sip-bg.jpg');
+  background-position: center center;
+  /* background-size: contain; */
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100vw;
+  position: relative;
+}
+
+.Login__Page .top {
+  padding: 10px 30px;
+}
+
+.Login__Page section {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.Login__Page section .si-card {
+  margin: 0px auto;
+  padding: 60px 68px 40px;
+  width: 450px;
+  min-height: 660px;
+  border-radius: 6px;
+  background-color: #000000bf;
+}
+
+.Login__Page section .si-card h2 {
+  font-size: 32px;
+  margin-bottom: 23px;
+  font-weight: 400;
+}
+
+.Login__Page section .si-card .validation {
+  background-color: #e87c03;
+  padding: 10px 16px;
+  font-size: 13px;
+  margin-bottom: 17px;
+  border-radius: 5px;
+  transition: opacity 0.4s ease;
+}
+
+.Login__Page section .si-card .input-co {
+  margin-bottom: 12px;
+}
+
+.Login__Page section .si-card .input-co:nth-last-child(5) {
+  margin-bottom: 40px;
+}
+
+.Login__Page section .si-card input {
+  background-color: #333;
+  height: 50px;
+  color: #fff;
+}
+
+.Login__Page section .si-card label {
+  color: #fff;
+  font-weight: 200;
+}
+
+.Login__Page img {
+  max-width: 143px;
+}
+
+.Login__Page section .si-card button {
+  width: 100%;
+  height: 45px;
+  color: #fff;
+}
+
+.Login__Page section .si-card .u-b {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Login__Page section .si-card .u-b .remember-me-co {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  user-select: none;
+}
+
+.Login__Page section .si-card .u-b .footer__item,
+.Login__Page section .si-card .u-b .remember-me-co label {
+  color: #b3b3b3 !important;
+}
+
+.Login__Page section .si-card .u-b .remember-me-co label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #737373;
+}
+
+.Login__Page section .si-card .n-su-co {
+  margin-top: 82px;
+  color: #737373;
+  font-size: 16px;
+}
+.Login__Page section .si-card .n-su-co .ca {
+  color: #fff;
+}
+
+.Login__Page section .si-card .ca:hover {
+  text-decoration: underline;
+}
+
+.Login__Page section .si-card .bot {
+  color: #8c8c8c;
+  font-size: 13px;
+}
+
+.Login__Page section .si-card .bot .ca {
+  color: #0071eb;
+}
+
+.Login__Page footer {
+  margin-top: 70px;
+  background-color: #000000bf;
+  padding: 30px;
+}
+.Login__Page footer .footer__grid {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.Login__Page footer .co {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.Login__Page section .si-card .text-validation {
+  font-size: 13px;
+  color: #e87c03;
+  margin-top: -12px;
+  margin-bottom: 12px;
+}
+
+.Login__Page .si-card .password-showing {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #8c8c8c;
+  font-size: 14px;
+  padding: 0 10px;
+  user-select: none;
+}

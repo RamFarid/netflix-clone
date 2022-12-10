@@ -1,0 +1,101 @@
+#single-film-page {
+  height: 100vh;
+}
+
+#single-film-page .Header__Title {
+  background-image: linear-gradient(180deg, #000 0, #000 25%, transparent);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 74px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+#single-film-page img {
+  max-width: 130px;
+}
+
+#single-film-page .film-data {
+  background-image: url('https://occ-0-55-56.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABfJ3taXX9a1j0A6fDL23gKoZFZTYxGcjtcXoc81CkmvIZ0kitmYwfFZW35ZKUI0Dt0_PVR_R8BW5EqCXPIaEDpso8BzZShWsqtY.jpg?r=c65');
+  height: 64%;
+  width: 100%;
+  position: relative;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#single-film-page .data {
+  background-image: linear-gradient(180deg, transparent, #000);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  bottom: -1px;
+  right: 0;
+  left: 0;
+  padding-bottom: 34px;
+}
+
+#single-film-page .data h1 {
+  text-align: center;
+  font-size: 29px;
+  font-weight: 500;
+  line-height: 32px;
+  margin: 0 0 12px 0;
+}
+
+#single-film-page .data .rank {
+  color: #999;
+  margin: 0 7px 0 0;
+  font-size: 14px;
+}
+
+#single-film-page .data .rank.maturity {
+  border: #4c4c4c 0.3px solid;
+  padding: 0.1em 0.2em 0;
+}
+
+#single-film-page .app-launch {
+  height: 36%;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+#single-film-page .app-launch .sponsore {
+  font-size: 29.4px;
+  font-weight: 500;
+  margin-bottom: 13px;
+  text-align: center;
+}
+
+#single-film-page .app-launch button {
+  display: block;
+  background: #d4001d;
+  outline: none;
+  border: none;
+  padding: 18px 0;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 18.3px;
+  border-radius: 3px;
+  margin-bottom: 23px;
+}
+
+#single-film-page .app-launch .website {
+  background: #141414;
+  text-align: center;
+  gap: 6px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

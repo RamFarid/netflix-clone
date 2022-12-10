@@ -1,0 +1,82 @@
+.Sub__Header {
+  position: fixed;
+  top: 69px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 60px;
+  height: 69px;
+  gap: 45px;
+  user-select: none;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+.Sub__Header.top {
+  border-bottom: 1px solid rgb(37, 33, 33);
+  background-color: black;
+}
+
+.Sub__Header .genre-title {
+  font-size: 38px;
+  font-weight: 600;
+}
+
+.Sub__Header .Genre {
+  font-size: 12.5px;
+  background: #000;
+  width: 101px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 9px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  position: relative;
+}
+
+.Sub__Header .Genre:hover {
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+
+.Sub__Header .Genre .list {
+  position: absolute;
+  left: 0;
+  top: 32px;
+  background: rgba(0, 0, 0, 0.9);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 114px);
+  border: 1px solid;
+  left: 0;
+  row-gap: 2px;
+  width: 371px;
+  padding: 0 8px;
+  height: 195px;
+}
+.Sub__Header .Genre .list__item:hover {
+  text-decoration: underline;
+}
+
+.Sub__Header .Genre span.symbol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Sub__Header .Classification {
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Sub__Header .Classification span.symbol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 9px;
+  border: 0.5px solid #fff;
+}

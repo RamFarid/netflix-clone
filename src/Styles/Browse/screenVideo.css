@@ -1,0 +1,164 @@
+.Screen-Video {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  user-select: none;
+}
+
+.Screen-Video .media-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.Screen-Video .media-container img {
+  position: absolute;
+  transition: all 0.4s linear;
+}
+
+.Screen-Video .media-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Screen-Video article {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0 0 10% 60px;
+}
+
+.Screen-Video article figure {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.Screen-Video article figure .btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Screen-Video article figure .btns .video-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.Screen-Video article figure .btns .video-actions button {
+  padding: 7.5px 22.7px 7.5px 18.9px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 15.6px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  height: 37px;
+}
+
+.Screen-Video article figure .btns .video-actions .play {
+  color: black;
+}
+
+.Screen-Video article figure .btns .video-actions .more {
+  color: white;
+  background-color: #6e6e6be3;
+}
+
+.Screen-Video article figure .btns .video-actions .more:active {
+  background-color: rgba(109, 109, 110, 0.4);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.Screen-Video article figure .btns .video-actions .play:active {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.Screen-Video article figure img {
+  max-width: 456px;
+  transition: all 1.2s ease-out 0.4s;
+  transform-origin: left bottom;
+}
+
+.Screen-Video figure figcaption {
+  max-width: 486px;
+  font-size: 13.5px;
+  margin: 19px 0;
+  visibility: visible;
+  max-height: 1000px;
+  transition: all ease 1.4s;
+}
+.Screen-Video article .btns .control-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.Screen-Video article .btns .control-info .vc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border: 1px solid;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.Screen-Video article .btns .control-info .vc:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.Screen-Video article .btns .control-info .vc:active {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.Screen-Video article .btns .control-info .nudity {
+  background-color: #33333399;
+  height: 34px;
+  border-left: 3px solid #fff;
+  font-size: 15px;
+  width: 87px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.Screen-Video article figure.video-is-active img {
+  max-width: 300px;
+}
+
+.Screen-Video article figure.video-is-active figcaption {
+  transform: translateY(100%);
+  opacity: 0;
+  max-height: 0;
+  visibility: hidden;
+}
+
+.Screen-Video .exit-btn {
+  background-color: #181818;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}

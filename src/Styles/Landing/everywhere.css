@@ -1,0 +1,13 @@
+section.everywhere .rhs {
+  position: relative;
+}
+
+section.everywhere .rhs video {
+  position: absolute;
+  top: 42px;
+  left: 95px;
+}
+
+section.everywhere .rhs img {
+  max-width: 490px;
+}

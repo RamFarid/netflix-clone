@@ -1,0 +1,53 @@
+section.download .lhs img {
+  max-width: 480px;
+}
+
+section.download .lhs .co {
+  position: relative;
+}
+
+section.download .downlad-animation {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  border: 2px solid hsla(0, 0%, 100%, 0.25);
+  box-shadow: 0 0 2em 0 #000;
+  padding: 6px 8px;
+  width: 323px;
+  border-radius: 12px;
+}
+
+section.download .lhs .downlad-animation .text {
+  margin-right: auto;
+  margin-left: 15px;
+  line-height: 20px;
+}
+
+section.download .lhs .downlad-animation .text p {
+  font-size: 14px;
+  color: #0071eb;
+}
+
+section.download .downlad-animation img:first-child {
+  max-width: 56px;
+}
+section.download .downlad-animation img:last-child {
+  max-width: 56px;
+}
+
+section.download .rhs {
+  padding-left: 60px;
+}
+
+section.download .lhs {
+  padding-right: 50px;
+}
+
+section.download .rhs h3.primary {
+  font-size: 36px;
+}

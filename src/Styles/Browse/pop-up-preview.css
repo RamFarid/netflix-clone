@@ -1,0 +1,6 @@
+#pop-up-preview .pop-up-info {
+  position: absolute;
+  background: chartreuse;
+  cursor: pointer;
+  z-index: 999;
+}

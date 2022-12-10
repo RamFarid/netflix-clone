@@ -1,0 +1,34 @@
+.SLider__Item {
+  position: relative;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.SLider__Item .bg-img-co {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.SLider__Item .bg-img-co img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: fill;
+}
+
+.SLider__Item .Video__Container .Video {
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+}
+
+.SLider__Item.entering .Video__Container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper.hover-on {
+  overflow: visible !important;
+}
