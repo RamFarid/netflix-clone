@@ -1,7 +1,8 @@
 .Login__Page {
   background-image: url('../../Assets/sip-bg.jpg');
   background-position: center center;
-  /* background-size: contain; */
+  background-size: cover;
+  background-repeat: no-repeat;
   min-height: 100vh;
   overflow-x: hidden;
   width: 100vw;
@@ -14,7 +15,7 @@
 
 .Login__Page section {
   width: 100%;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 .Login__Page section .si-card {
@@ -153,4 +154,41 @@
   font-size: 14px;
   padding: 0 10px;
   user-select: none;
+}
+
+@media screen and (max-width: 768px) {
+  .Login__Page {
+    background: revert;
+  }
+
+  .Login__Page section {
+    min-height: unset;
+  }
+
+  .Login__Page .si-card {
+    margin: unset !important;
+    padding: 20px 15px !important;
+    width: 100% !important;
+    min-height: unset !important;
+    border-radius: 6px !important;
+    background-color: #000 !important;
+  }
+
+  .Login__Page .si-card .n-su-co {
+    margin-top: 14px;
+  }
+
+  .Login__Page .top {
+    background-color: #000;
+  }
+
+  .Login__Page footer {
+    border-top: 1px solid #737373;
+    margin-top: unset;
+    background-color: #000;
+  }
+
+  .Login__Page footer .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
