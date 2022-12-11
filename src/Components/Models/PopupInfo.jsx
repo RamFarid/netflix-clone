@@ -72,7 +72,9 @@ function PopupInfo({ handleClosingTab }) {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-
+  useEffect(() => {
+    document.title = Request.titleGenerator(movie) || 'Netflix By Ram'
+  }, [movie])
   return ReactDOM.createPortal(
     <section
       className='pop-up-info'

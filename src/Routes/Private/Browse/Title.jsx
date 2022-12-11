@@ -5,7 +5,7 @@ import AppLaunch from '../../../Components/reusables/Title/AppLaunch'
 import '../../../Styles/Browse/titlePage.css'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
-import tmdb from '../../../APIs/apiMain'
+import tmdb, { Request } from '../../../APIs/apiMain'
 import { isBrowser } from 'react-device-detect'
 
 function Title() {
@@ -13,6 +13,9 @@ function Title() {
   const [film, setFilm] = useState({})
   const location = useLocation()
   const params = useParams()
+  useEffect(() => {
+    document.title = Request.titleGenerator(film) || 'Netflix'
+  }, [film])
   useEffect(() => {
     const getMovie = async () => {
       tmdb

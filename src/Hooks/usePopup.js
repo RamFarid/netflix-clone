@@ -31,6 +31,7 @@ function usePopup(ref) {
       root.style.right = 'unset'
       root.style.bottom = 'unset'
       window.scrollTo(0, scrollValue.current)
+      document.title = 'Netflix By Ram'
     }
   }
   return {
