@@ -39,7 +39,7 @@ function Home() {
               category={slider.link}
               title={slider.title}
               key={id + 6}
-              requestFor={'tv'}
+              requestFor={'movie'}
             />
           )
         }
