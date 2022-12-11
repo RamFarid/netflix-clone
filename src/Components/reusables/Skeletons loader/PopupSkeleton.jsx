@@ -32,4 +32,45 @@ function PopupSkeletonAbout() {
   )
 }
 
-export { PopupSkeletonMore, PopupSkeletonAbout }
+function MoreLikeThisSkeleton() {
+  return (
+    <div className='more-like-this__container'>
+      <div className='overlay2'></div>
+      <MoreLikeThisItem />
+      <MoreLikeThisItem />
+      <MoreLikeThisItem />
+      <MoreLikeThisItem />
+      <MoreLikeThisItem />
+      <MoreLikeThisItem />
+      <MoreLikeThisItem />
+      <MoreLikeThisItem />
+      <MoreLikeThisItem />
+    </div>
+  )
+}
+
+function MoreLikeThisItem() {
+  return (
+    <div className='more-like-this__item'>
+      <div className='img-co'>
+        <Skeleton />
+      </div>
+      <div className='info'>
+        <div className='top'>
+          <div className='left'>
+            <Skeleton width={80} />
+            <Skeleton width={40} />
+          </div>
+          <div className='right'>
+            <Skeleton circle={true} width={40} height={40} />
+          </div>
+        </div>
+        <div className='description' style={{ marginBottom: '100px' }}>
+          <Skeleton height={10} count={7} />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export { PopupSkeletonMore, PopupSkeletonAbout, MoreLikeThisSkeleton }

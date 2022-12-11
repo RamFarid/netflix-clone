@@ -3,11 +3,13 @@ import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 import useGetMore from '../../Hooks/useGetMore'
 import '../../Styles/Browse/more-like-this.css'
 import MoreLikeThisItem from './MoreLikeThisItem'
+import { MoreLikeThisSkeleton } from '../../Components/reusables/Skeletons loader/PopupSkeleton'
 
 function MoreLikeThis({ requestFor, readyData }) {
   const [isPaginated, setIsPaginated] = useState(false)
   const systemRef = useRef()
   const [apiData] = useGetMore(requestFor, readyData)
+  if (!readyData) return <MoreLikeThisSkeleton />
   const paginationHandling = () => {
     setIsPaginated((pre) => !pre)
     systemRef.current.classList.toggle('active')
