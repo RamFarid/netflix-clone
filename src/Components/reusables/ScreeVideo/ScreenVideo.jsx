@@ -56,7 +56,8 @@ function ScreenVideo({ isPopup, movieData, requestFor }) {
     video =
       Request.movieShowHandler(movieData?.videos?.results) ||
       Request.movieShowHandler(movie?.videos?.results),
-    title = Request.titleGenerator(movie) || Request.titleGenerator(movieData)
+    title = Request.titleGenerator(movie) || Request.titleGenerator(movieData),
+    id = movie?.id || movieData?.id
   function playAction() {
     if (video === undefined) {
       alert(
@@ -104,7 +105,12 @@ function ScreenVideo({ isPopup, movieData, requestFor }) {
 
           <Description description={description} isPopup={isPopup} />
           <div className='btns'>
-            <BtnsActions isPopup={isPopup} playAction={playAction} />
+            <BtnsActions
+              isPopup={isPopup}
+              playAction={playAction}
+              requestFor={requestFor}
+              videoId={id}
+            />
             <BtnsControls
               btnAppereance={btnAppereance}
               controlHandler={controlHandler}
