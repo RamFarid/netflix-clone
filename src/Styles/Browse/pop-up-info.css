@@ -16,6 +16,7 @@
   height: fit-content;
   background-color: rgba(0, 0, 0, 0.788);
   user-select: none;
+  animation: popup-gradiant 0.4s forwards;
 }
 
 .pop-up-info .co {
@@ -37,6 +38,7 @@
   margin: 30px auto 0;
   border-radius: 6px;
   overflow: hidden;
+  animation: popup 0.3s forwards;
 }
 
 .pop-up-info .data figcaption {
@@ -112,4 +114,13 @@
 .pop-up-info .data h5 {
   font-size: 24px;
   margin: 30px 0 8px 0;
+}
+
+@keyframes popup-gradiant {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

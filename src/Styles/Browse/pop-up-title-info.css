@@ -11,6 +11,10 @@
   margin-top: 12px;
 }
 
+.pop-up-info .data {
+  animation: popup 0.3s forwards;
+}
+
 .pop-up-info .data h2 {
   margin: 67px 0;
   text-align: center;

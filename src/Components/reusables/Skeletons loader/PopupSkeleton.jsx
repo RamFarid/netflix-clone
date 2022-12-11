@@ -26,6 +26,7 @@ function PopupSkeletonMore() {
 function PopupSkeletonAbout() {
   return (
     <div className='another-data' id='more-about-amovie'>
+      <Skeleton height={40} />
       <Skeleton count={7} />
     </div>
   )

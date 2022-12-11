@@ -35,17 +35,10 @@ function PopupTitleInfo({ handleClosingTab, title, fetchTitle }) {
   return ReactDOM.createPortal(
     <motion.section
       ref={containerRef}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
       className='pop-up-info'
       onClick={handleClosingTab}
     >
-      <div
-        className='data'
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.3 }}
-      >
+      <div className='data'>
         <h2>{title}</h2>
         <div>
           <InfiniteScroll

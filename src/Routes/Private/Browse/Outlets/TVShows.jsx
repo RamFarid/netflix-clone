@@ -13,6 +13,18 @@ function TVShows() {
       {isBrowser && <ScreenVideo requestFor='tv' />}
       <SubHeader genre='TVshows' isMovies={false} />
       {Request.tvShows.map((slider, id) => {
+        if (id === 0) {
+          return (
+            <Slider
+              mt={'-80px'}
+              category={slider.link}
+              title={slider.title}
+              key={id + 6}
+              requestFor={'tv'}
+            />
+          )
+        }
+
         return (
           <Slider
             category={slider.link}

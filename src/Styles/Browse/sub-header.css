@@ -54,6 +54,7 @@
   width: 371px;
   padding: 0 8px;
   height: 195px;
+  animation: gentre-list-subheader 0.4s forwards;
 }
 .Sub__Header .Genre .list__item:hover {
   text-decoration: underline;
@@ -79,4 +80,13 @@
   align-items: center;
   padding: 3px 9px;
   border: 0.5px solid #fff;
+}
+
+@keyframes gentre-list-subheader {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

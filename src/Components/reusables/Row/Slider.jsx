@@ -35,7 +35,7 @@ const BREAKPOINTS = {
   },
 }
 
-function Slider({ category, title, requestFor }) {
+function Slider({ category, title, requestFor, mt }) {
   const movies = useGetSlider(category)
   // console.log(movies, title)
   const handleTitle = () => {
@@ -109,6 +109,7 @@ function Slider({ category, title, requestFor }) {
   const { popupInfo, handleClosingTab, stylesGenerator } = usePopup()
   return (
     <div
+      style={mt ? { marginTop: mt } : {}}
       className={
         isMobile
           ? 'Row__Collection mobile-collection'

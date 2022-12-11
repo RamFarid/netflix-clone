@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { BsArrowDownShort } from 'react-icons/bs'
 import Genres from '../../../APIs/genres.js'
-import { AnimatePresence, motion } from 'framer-motion'
 
 function GenreList({ isMovies }) {
   const [option, setOption] = useState('Genre')
@@ -15,41 +14,25 @@ function GenreList({ isMovies }) {
       <span className='symbol'>
         <BsArrowDownShort size={20} />
       </span>
-      <AnimatePresence>
-        {list && (
-          <motion.div
-            key='cm'
-            className='list'
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            {isMovies === true
-              ? Genres.movie.map(({ name }, id) => {
-                  return (
-                    <div
-                      className='list__item'
-                      onClick={clickMenu}
-                      key={id + 5}
-                    >
-                      {name}
-                    </div>
-                  )
-                })
-              : Genres.tvShows.map(({ name }, id) => {
-                  return (
-                    <div
-                      className='list__item'
-                      onClick={clickMenu}
-                      key={id + 3}
-                    >
-                      {name}
-                    </div>
-                  )
-                })}
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {list && (
+        <div key='cm' className='list'>
+          {isMovies === true
+            ? Genres.movie.map(({ name }, id) => {
+                return (
+                  <div className='list__item' onClick={clickMenu} key={id + 5}>
+                    {name}
+                  </div>
+                )
+              })
+            : Genres.tvShows.map(({ name }, id) => {
+                return (
+                  <div className='list__item' onClick={clickMenu} key={id + 3}>
+                    {name}
+                  </div>
+                )
+              })}
+        </div>
+      )}
     </div>
   )
 }

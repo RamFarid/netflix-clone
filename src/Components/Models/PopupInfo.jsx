@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import ScreenVideo from '../reusables/ScreeVideo/ScreenVideo'
-import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import useGetMovie from '../../Hooks/useGetMovie'
 import { Request } from '../../APIs/apiMain'
@@ -25,6 +24,7 @@ function PopupInfo({ handleClosingTab }) {
   const videoId = searchParams.get('title')
   const requestFor = searchParams.get('requestFor')
   const [movie, recomendations, loader] = useGetMovie(requestFor, videoId)
+  console.log(movie)
   const title = Request.titleGenerator(movie)
   const evaluation = movie?.vote_average
   const desc = movie?.overview
@@ -74,25 +74,17 @@ function PopupInfo({ handleClosingTab }) {
   }, [])
 
   return ReactDOM.createPortal(
-    <motion.section
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+    <section
       className='pop-up-info'
       onClick={(e) => {
         handleClosingTab(e)
         if (e.target.className === e.currentTarget.className) {
           setSearchParams({})
-          redirectTo('/browse')
+          redirectTo(window.location.pathname)
         }
       }}
     >
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.3 }}
-        className='data'
-        key='popupinfo'
-      >
+      <div className='data'>
         <ScreenVideo isPopup={true} fetchType='movie' movieData={movie} />
         <div className='co'>
           {loader === false ? (
@@ -134,8 +126,8 @@ function PopupInfo({ handleClosingTab }) {
             <PopupSkeletonAbout />
           ) : null}
         </div>
-      </motion.div>
-    </motion.section>,
+      </div>
+    </section>,
     document.getElementById('pop-up-info')
   )
 }

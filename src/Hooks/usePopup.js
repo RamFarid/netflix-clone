@@ -1,7 +1,7 @@
 import { useContext, useRef, useState } from 'react'
 import { RootContext } from '../Contexts/RootContext'
 
-function usePopup() {
+function usePopup(ref) {
   const rootRef = useContext(RootContext)
   const scrollValue = useRef(0)
   const [popupInfo, setPopupInfo] = useState(false)
@@ -14,7 +14,7 @@ function usePopup() {
     }
     scrollValue.current = window.scrollY
     setPopupInfo(true)
-    const root = rootRef.current
+    const root = ref ? ref.current : rootRef.current
     root.style.top = `-${scrollValue.current}px`
     root.style.left = '0'
     root.style.right = '0'
@@ -24,7 +24,7 @@ function usePopup() {
   const handleClosingTab = (e) => {
     if (e.target.className === e.currentTarget.className) {
       setPopupInfo(false)
-      const root = rootRef.current
+      const root = ref ? ref.current : rootRef.current
       root.style.position = 'unset'
       root.style.top = `unset`
       root.style.left = 'unset'

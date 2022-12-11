@@ -12,6 +12,17 @@ function Movies() {
         {isBrowser && <ScreenVideo requestFor='movie' />}
         <SubHeader genre='Movies' isMovies={true} />
         {Request.movie.map((slider, id) => {
+          if (id === 0) {
+            return (
+              <Slider
+                mt={'-80px'}
+                category={slider.link}
+                title={slider.title}
+                key={id + 6}
+                requestFor={'movie'}
+              />
+            )
+          }
           return (
             <Slider
               category={slider.link}

@@ -12,8 +12,30 @@ function Home() {
       {isBrowser && <ScreenVideo requestFor={'movie'} />}
       {Request.home.map((slider, id) => {
         if (slider.link.includes('tv')) {
+          if (id === 0) {
+            return (
+              <Slider
+                mt={'-80px'}
+                category={slider.link}
+                title={slider.title}
+                key={id + 6}
+                requestFor={'tv'}
+              />
+            )
+          }
           return (
             <Slider
+              category={slider.link}
+              title={slider.title}
+              key={id + 6}
+              requestFor={'tv'}
+            />
+          )
+        }
+        if (id === 0) {
+          return (
+            <Slider
+              mt={'-80px'}
               category={slider.link}
               title={slider.title}
               key={id + 6}

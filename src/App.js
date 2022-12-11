@@ -38,9 +38,9 @@ function App() {
             <Route path='movies' element={<Movies />} />
             <Route path='latest' element={<Latest />} />
             <Route path='my-list' element={<MyList />} />
-            <Route path='movie/:id' element={<Title />} />
-            <Route path='tv/:id' element={<Title />} />
           </Route>
+          <Route path='/browse/movie/:id' element={<Title />} />
+          <Route path='/browse/tv/:id' element={<Title />} />
         </Route>
       </Routes>
       <ScrollToTop />

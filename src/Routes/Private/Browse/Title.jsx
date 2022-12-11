@@ -16,12 +16,13 @@ function Title() {
   const [film, setFilm] = useState({})
   const location = useLocation()
   useEffect(() => {
+    console.log(location.pathname)
     if (isBrowser === true) {
       stylesGenerator()
     }
     const getMovie = async () => {
       tmdb
-        .get(`${location.pathname}`)
+        .get(`${location.pathname.slice(7)}`)
         .then((res) => {
           setFilm(res.data)
         })
