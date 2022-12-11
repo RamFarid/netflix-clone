@@ -5,7 +5,6 @@ import tmdb from '../APIs/apiMain'
 function useGetMore(requestFor, readyData) {
   const [data, setData] = useState([])
   useEffect(() => {
-    console.log('From getMore')
     if (readyData?.length === 0) {
       tmdb
         .get(`discover/${requestFor}`, {

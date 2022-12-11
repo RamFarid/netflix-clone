@@ -16,6 +16,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 import {
   PopupSkeletonMore,
   PopupSkeletonAbout,
+  MoreLikeThisSkeleton,
 } from '../reusables/Skeletons loader/PopupSkeleton'
 
 function PopupInfo({ handleClosingTab }) {
@@ -24,7 +25,6 @@ function PopupInfo({ handleClosingTab }) {
   const videoId = searchParams.get('title')
   const requestFor = searchParams.get('requestFor')
   const [movie, recomendations, loader] = useGetMovie(requestFor, videoId)
-  console.log(movie)
   const title = Request.titleGenerator(movie)
   const evaluation = movie?.vote_average
   const desc = movie?.overview
@@ -75,6 +75,7 @@ function PopupInfo({ handleClosingTab }) {
   useEffect(() => {
     document.title = Request.titleGenerator(movie) || 'Netflix By Ram'
   }, [movie])
+
   return ReactDOM.createPortal(
     <section
       className='pop-up-info'
@@ -111,7 +112,11 @@ function PopupInfo({ handleClosingTab }) {
             <PopupSkeletonMore />
           ) : null}
           <hr />
-          <MoreLikeThis requestFor={requestFor} readyData={recomendations} />
+          {loader === false ? (
+            <MoreLikeThis requestFor={requestFor} readyData={recomendations} />
+          ) : loader === true ? (
+            <MoreLikeThisSkeleton />
+          ) : null}
           {loader === false ? (
             <div className='another-data' id='more-about-amovie'>
               <h5>About {title}.</h5>
