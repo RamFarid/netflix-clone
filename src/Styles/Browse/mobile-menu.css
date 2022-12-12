@@ -4,6 +4,7 @@
   right: 0;
   top: 0;
   bottom: 0;
+  min-height: 100vh;
   background: rgba(0, 0, 0, 0.4);
   z-index: 100;
 }
@@ -37,6 +38,7 @@
 
 .menu .menu-item {
   padding: 5px 0;
+  display: block;
 }
 
 .menu .data .profile .profile-data {

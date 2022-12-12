@@ -4,10 +4,12 @@ import ram from '../../Assets/Ram.jpeg'
 import Genres from '../../APIs/genres'
 
 import '../../Styles/Browse/mobile-menu.css'
+import { Link } from 'react-router-dom'
 function Menu({ setMenu }) {
   const handleClosingTab = (e) => {
     if (e.target.className === e.currentTarget.className) {
       setMenu(false)
+      document.body.classList.remove('noscroll')
     }
   }
   return ReactDOM.createPortal(
@@ -27,9 +29,9 @@ function Menu({ setMenu }) {
         <div className='menu-item active'>Home</div>
         {Genres.movie.map((movie) => {
           return (
-            <div className='menu-item' key={movie.id}>
+            <Link className='menu-item' key={movie.id}>
               {movie.name}
-            </div>
+            </Link>
           )
         })}
       </div>

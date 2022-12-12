@@ -39,6 +39,10 @@ body {
   right: 0;
 }
 
+.noscroll {
+  overflow: hidden;
+}
+
 @keyframes popup {
   0% {
     transform: scale(0.8);

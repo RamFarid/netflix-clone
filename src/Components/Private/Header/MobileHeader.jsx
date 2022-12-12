@@ -6,9 +6,13 @@ import Menu from '../../Models/Menu'
 
 function MobileHeader() {
   const [menu, setMenu] = useState(false)
+  const onClick = () => {
+    document.body.classList.toggle('noscroll')
+    setMenu((prev) => !prev)
+  }
   return (
     <header className='Header__Mobile'>
-      <GiHamburgerMenu onClick={() => setMenu((prev) => !prev)} />
+      <GiHamburgerMenu onClick={onClick} />
       <img src={LOGO} alt='Netflix' />
       <input type='search' name='search' id='search' placeholder='Search' />
       {menu && <Menu setMenu={setMenu} />}

@@ -70,9 +70,6 @@ function PopupInfo({ handleClosingTab }) {
   const seasons = movie?.seasons?.length
   const time = movie?.runtime
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-  useEffect(() => {
     document.title = Request.titleGenerator(movie) || 'Netflix By Ram'
   }, [movie])
 
