@@ -11,6 +11,7 @@ function User() {
   const redirectTo = useNavigate()
   const auth = useContext(AuthContext)
   const handleSignningOut = () => {
+    document.body.classList.remove('noscroll')
     auth.setIsLoggedInL(false)
     window.sessionStorage.setItem('isLoggedIn', false)
     redirectTo('/')

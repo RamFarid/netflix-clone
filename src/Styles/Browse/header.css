@@ -110,7 +110,7 @@
   transition: all 0.2s linear;
 }
 
-.Header__Browse .right .user .icon:hover svg {
+.Header__Browse .right .user:hover .icon svg {
   transform: rotate(180deg);
 }
 
