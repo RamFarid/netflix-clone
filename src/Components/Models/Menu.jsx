@@ -26,7 +26,11 @@ function Menu({ setMenu }) {
         </div>
         <div className='menu-item active'>Home</div>
         {Genres.movie.map((movie) => {
-          return <div className='menu-item'>{movie.name}</div>
+          return (
+            <div className='menu-item' key={movie.id}>
+              {movie.name}
+            </div>
+          )
         })}
       </div>
     </section>,
