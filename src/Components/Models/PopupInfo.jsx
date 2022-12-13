@@ -13,18 +13,23 @@ import PopupMovieTime from '../reusables/PopUpInfoModels/PopupMovieTime'
 import HDItem from '../reusables/HDItem'
 import PopupDescription from '../reusables/PopUpInfoModels/PopupDescription'
 import { useNavigate, useSearchParams } from 'react-router-dom'
+import { AiOutlineQuestionCircle } from 'react-icons/ai'
 import {
   PopupSkeletonMore,
   PopupSkeletonAbout,
   MoreLikeThisSkeleton,
 } from '../reusables/Skeletons loader/PopupSkeleton'
+import { toast } from 'react-toastify'
 
 function PopupInfo({ handleClosingTab }) {
   const redirectTo = useNavigate()
   const [searchParams, setSearchParams] = useSearchParams()
   const videoId = searchParams.get('title')
   const requestFor = searchParams.get('requestFor')
-  const [movie, recomendations, loader] = useGetMovie(requestFor, videoId)
+  const [movie, recomendations, loader, error] = useGetMovie(
+    requestFor,
+    videoId
+  )
   const title = Request.titleGenerator(movie)
   const evaluation = movie?.vote_average
   const desc = movie?.overview
@@ -72,7 +77,23 @@ function PopupInfo({ handleClosingTab }) {
   useEffect(() => {
     document.title = Request.titleGenerator(movie) || 'Netflix By Ram'
   }, [movie])
+  useEffect(() => {
+    if (error.isError) {
+      toast.error(new Error(error.msg) + ', Redirect to Home page', {
+        onClose: () => {
+          redirectTo('/browse')
+        },
+        icon: <AiOutlineQuestionCircle size={20} fill='#d4001d' />,
+        style: {
+          background: '#141414',
+          fontSize: '14px',
+          color: '#d4001d',
+        },
+      })
+    }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [error])
   return ReactDOM.createPortal(
     <section
       className='pop-up-info'

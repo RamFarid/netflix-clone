@@ -12,7 +12,9 @@ function PopupTitleInfo({ handleClosingTab, title, fetchTitle }) {
   const [isEnd, setIsEnd] = useState(true)
   const [movies, setMovies] = useState([])
   const getData = async () => {
+    console.log('Func play')
     if (pagesRef.current === 10) {
+      console.log('Ref === 10')
       setIsEnd(false)
       return
     }
@@ -23,10 +25,14 @@ function PopupTitleInfo({ handleClosingTab, title, fetchTitle }) {
         },
       })
       .then((res) => {
+        console.log('Done fetch')
         setMovies([...movies, ...res.data.results])
         pagesRef.current += 1
       })
-      .catch((e) => console.log(e))
+      .catch((e) => {
+        console.log(e)
+        console.log('Error fetch')
+      })
   }
   useEffect(() => {
     getData()
@@ -44,19 +50,6 @@ function PopupTitleInfo({ handleClosingTab, title, fetchTitle }) {
             next={getData}
             className='system'
             loader={<div>Fetching Data...</div>}
-            endMessage={
-              <div style={{ display: 'block', color: 'red' }}>
-                Dude! That's enough, subscribe on official{' '}
-                <a
-                  style={{ textDecoration: 'underline' }}
-                  href='https://www.netflix.com'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  Netflix
-                </a>
-              </div>
-            }
           >
             {movies.map((movie, id) => {
               return <VideoBItem movie={movie} key={id + 1} />
