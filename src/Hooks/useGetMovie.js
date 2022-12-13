@@ -13,7 +13,6 @@ function useGetMovie(type, id) {
           `${type}/${id}?append_to_response=credits,videos,images,recommendations,content_ratings`
         )
         .then((res) => {
-          console.log(res)
           setLoader(false)
           setData(res.data)
           setRecomendations(res.data.recommendations.results)
