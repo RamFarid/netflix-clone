@@ -11,6 +11,7 @@ function SliderSkeleton() {
           height: '90px',
           width: '150px',
           marginRight: '5px',
+          aspectRatio: '16/9',
         }}
         baseColor={'black'}
         highlightColor='#141414'

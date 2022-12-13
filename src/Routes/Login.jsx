@@ -8,6 +8,7 @@ import Footer from '../Components/LoginPage/Footer'
 import { AuthContext } from '../Contexts/AuthContext'
 
 import '../Styles/Login/login.css'
+import { toast } from 'react-toastify'
 function Login() {
   const EMAIL = 'workprojects22@gmail.com'
   const PASSWORD = '123456'
@@ -20,7 +21,10 @@ function Login() {
 
   const handleLogin = () => {
     if (password.trim() === '' || email.trim() === '') {
-      alert('Empty fields')
+      toast.warning('Fields empty', {
+        autoClose: 2000,
+        hideProgressBar: true,
+      })
       return
     }
     if (email === EMAIL && password === PASSWORD) {

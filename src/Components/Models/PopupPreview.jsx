@@ -15,11 +15,7 @@ const PopupPreview = forwardRef((props, ref) => {
     // console.log(targetPositions)
   })
   return (
-    <div
-      ref={ref}
-      onClick={() => alert('You Clicked on the video')}
-      className='pop-up-info'
-    >
+    <div ref={ref} className='pop-up-info'>
       <YouTube
         onReady={() => console.log('Ready to play')}
         onPlay={() => console.log('is played')}

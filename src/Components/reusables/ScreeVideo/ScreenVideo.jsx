@@ -11,6 +11,7 @@ import Description from './Description'
 import BtnsActions from './BtnsActions'
 import BtnsControls from './BtnsControls'
 import ExitBtn from './ExitBtn'
+import { toast } from 'react-toastify'
 
 function ScreenVideo({ isPopup, movieData, requestFor }) {
   const [trendingData, setTrendingData] = useState([])
@@ -60,7 +61,7 @@ function ScreenVideo({ isPopup, movieData, requestFor }) {
     id = movie?.id || movieData?.id
   function playAction() {
     if (video === undefined) {
-      alert(
+      toast.error(
         'ERROR ocurred while open video, This might me happend Bec. No resources found in FREE API'
       )
       return

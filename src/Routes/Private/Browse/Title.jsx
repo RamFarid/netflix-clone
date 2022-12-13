@@ -7,7 +7,9 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import tmdb, { Request } from '../../../APIs/apiMain'
 import { isBrowser } from 'react-device-detect'
-
+import { toast, ToastContainer, Zoom } from 'react-toastify'
+import { AiOutlineQuestionCircle } from 'react-icons/ai'
+import 'react-toastify/dist/ReactToastify.css'
 function Title() {
   const navigateTo = useNavigate()
   const [film, setFilm] = useState({})
@@ -26,9 +28,38 @@ function Title() {
         .catch((e) => {
           const statusCode = e.response.status
           if (statusCode === 404) {
-            alert(new Error('Not found') + ', Redirect to Home page')
-            navigateTo('/browse')
+            toast.error(
+              new Error('Not found work') + ', Redirect to Home page',
+              {
+                onClose: () => {
+                  navigateTo('/browse')
+                },
+                icon: <AiOutlineQuestionCircle size={20} fill='#d4001d' />,
+                style: {
+                  background: '#141414',
+                  fontSize: '14px',
+                  color: '#d4001d',
+                },
+              }
+            )
+          } else {
+            toast.error(
+              new Error(e.response.data.status_message) +
+                ', Redirect to Home page',
+              {
+                onClose: () => {
+                  navigateTo('/browse')
+                },
+                icon: <AiOutlineQuestionCircle size={20} fill='#d4001d' />,
+                style: {
+                  background: '#141414',
+                  fontSize: '14px',
+                  color: '#d4001d',
+                },
+              }
+            )
           }
+
           console.log(e)
         })
     }
@@ -48,6 +79,15 @@ function Title() {
         <FilmData data={film} />
         <AppLaunch />
       </div>
+      <ToastContainer
+        position='top-center'
+        autoClose={false}
+        newestOnTop={false}
+        closeOnClick
+        draggable
+        theme='dark'
+        transition={Zoom}
+      />
     </React.Fragment>
   )
 }

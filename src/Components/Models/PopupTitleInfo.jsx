@@ -5,15 +5,17 @@ import VideoBItem from '../reusables/Row/VideoBItem'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 import '../../Styles/Browse/pop-up-title-info.css'
-import tmdb, { Request } from '../../APIs/apiMain'
+import tmdb from '../../APIs/apiMain'
 import { useRef } from 'react'
 function PopupTitleInfo({ handleClosingTab, title, fetchTitle }) {
-  const containerRef = useRef()
   const pagesRef = useRef(1)
   const [isEnd, setIsEnd] = useState(true)
   const [movies, setMovies] = useState([])
   const getData = async () => {
-    if (pagesRef.current === 10) return setIsEnd(false)
+    if (pagesRef.current === 10) {
+      setIsEnd(false)
+      return
+    }
     tmdb
       .get(`${fetchTitle}`, {
         params: {
@@ -32,11 +34,7 @@ function PopupTitleInfo({ handleClosingTab, title, fetchTitle }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return ReactDOM.createPortal(
-    <motion.section
-      ref={containerRef}
-      className='pop-up-info'
-      onClick={handleClosingTab}
-    >
+    <motion.section className='pop-up-info' onClick={handleClosingTab}>
       <div className='data'>
         <h2>{title}</h2>
         <div>
@@ -61,14 +59,7 @@ function PopupTitleInfo({ handleClosingTab, title, fetchTitle }) {
             }
           >
             {movies.map((movie, id) => {
-              return (
-                <VideoBItem
-                  alt={Request.titleGenerator(movie)}
-                  img={Request.imgGenerator(movie)}
-                  key={id + 1}
-                  normalView={false}
-                />
-              )
+              return <VideoBItem movie={movie} key={id + 1} />
             })}
           </InfiniteScroll>
         </div>

@@ -4,6 +4,7 @@ import AddBtn from './AddBtn'
 import Evaluation from './Evaluation'
 import '../../Styles/Browse/more-like-this.css'
 import { useSearchParams } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 function MoreLikeThisItem({ movie }) {
   // eslint-disable-next-line no-unused-vars
@@ -25,7 +26,7 @@ function MoreLikeThisItem({ movie }) {
         if (movieKey !== undefined)
           window.open(`https://www.youtube.com/embed/${movieKey}`)
         if (movieKey === undefined)
-          window.alert(
+          toast.error(
             'ERROR ocurred while open video, This might me happend Bec. No resources found in FREE API'
           )
       })

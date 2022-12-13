@@ -4,6 +4,7 @@ import { BiHelpCircle, BiTransferAlt } from 'react-icons/bi'
 import { BsPencil } from 'react-icons/bs'
 import { IoMdArrowDropdown } from 'react-icons/io'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import ram from '../../../Assets/Ram.jpeg'
 import { AuthContext } from '../../../Contexts/AuthContext'
 
@@ -25,7 +26,11 @@ function User() {
       <div className='user-popup'>
         <div
           className='user-item'
-          onClick={() => window.alert('أنت فيه اهو يسطا')}
+          onClick={() =>
+            toast.info('انت فيه اهو يسطا', {
+              rtl: true,
+            })
+          }
         >
           <img src={ram} alt='Ram' />
           <span>Ram Farid</span>
