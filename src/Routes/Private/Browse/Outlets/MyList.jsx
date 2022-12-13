@@ -16,7 +16,9 @@ function MyList() {
     }
     return list.map((movie) => {
       let requestFor = movie.title ? 'movie' : 'tv'
-      return <VideoBItem movie={movie} requestFor={requestFor} />
+      return (
+        <VideoBItem movie={movie} requestFor={requestFor} key={movie.id + 1} />
+      )
     })
   }
   return (

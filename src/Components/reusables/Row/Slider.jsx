@@ -15,6 +15,7 @@ import useGetSlider from '../../../Hooks/useGetSlider'
 import { Request } from '../../../APIs/apiMain'
 import PopupTitleInfo from '../../../Components/Models/PopupTitleInfo'
 import usePopup from '../../../Hooks/usePopup.js'
+import { SliderSkeleton } from '../Skeletons loader/SliderSkeleton'
 
 const BREAKPOINTS = {
   502: {
@@ -36,7 +37,7 @@ const BREAKPOINTS = {
 }
 
 function Slider({ category, title, requestFor, mt }) {
-  const movies = useGetSlider(category)
+  const [movies, loader] = useGetSlider(category)
   const handleTitle = () => {
     if (isBrowser === true) {
       stylesGenerator()
@@ -58,14 +59,17 @@ function Slider({ category, title, requestFor, mt }) {
           allowTouchMove={false}
           breakpoints={BREAKPOINTS}
         >
-          {movies &&
+          {loader === true ? (
+            <SliderSkeleton />
+          ) : (
             movies.map((movie) => {
               return (
                 <SwiperSlide key={movie.id}>
                   <VideoBItem movie={movie} requestFor={requestFor} />
                 </SwiperSlide>
               )
-            })}
+            })
+          )}
         </Swiper>
       )
     }
@@ -80,8 +84,8 @@ function Slider({ category, title, requestFor, mt }) {
           loop={false}
           breakpoints={BREAKPOINTS}
         >
-          {movies === [] ? (
-            <p>Loading</p>
+          {loader === true ? (
+            <SliderSkeleton />
           ) : (
             movies.map((movie) => {
               return (
@@ -126,7 +130,16 @@ function Slider({ category, title, requestFor, mt }) {
         </div>
         <div className='swiper-pagination'></div>
       </h2>
-      <div className='slider'>{sliderGenerator()}</div>
+      <div
+        className='slider'
+        style={
+          loader === true
+            ? { maxHeight: '90px', overflow: 'hidden', maxWidth: '100vw' }
+            : {}
+        }
+      >
+        {sliderGenerator()}
+      </div>
       {popupInfo && (
         <PopupTitleInfo
           handleClosingTab={handleClosingTab}
