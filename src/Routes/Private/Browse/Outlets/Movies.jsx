@@ -10,7 +10,7 @@ function Movies() {
     <React.Fragment>
       <React.Fragment>
         {isBrowser && <ScreenVideo requestFor='movie' />}
-        <SubHeader genre='Movies' isMovies={true} />
+        {isBrowser && <SubHeader genre='Movies' isMovies={true} />}
         {Request.movie.map((slider, id) => {
           if (id === 0) {
             return (

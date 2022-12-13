@@ -5,7 +5,7 @@ import Genres from '../../APIs/genres'
 import { AuthContext } from '../../Contexts/AuthContext'
 
 import '../../Styles/Browse/mobile-menu.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 function Menu({ setMenu }) {
   const redirectTo = useNavigate()
   const auth = useContext(AuthContext)
@@ -37,14 +37,18 @@ function Menu({ setMenu }) {
             Sign Out Of Netflix
           </div>
         </div>
-        <div className='menu-item active'>Home</div>
-        {Genres.movie.map((movie) => {
-          return (
-            <Link className='menu-item' key={movie.id}>
-              {movie.name}
-            </Link>
-          )
-        })}
+        <NavLink className='menu-item' to='/browse' end>
+          Home
+        </NavLink>
+        <NavLink className='menu-item' to='/browse/tv-shows' end>
+          TV Shows
+        </NavLink>
+        <NavLink className='menu-item' to='/browse/movies' end>
+          Movies
+        </NavLink>
+        <NavLink className='menu-item' to='/browse/my-list' end>
+          My List
+        </NavLink>
       </div>
     </section>,
     document.getElementById('mobile-menu')

@@ -110,6 +110,7 @@ function ScreenVideo({ isPopup, movieData, requestFor }) {
               playAction={playAction}
               requestFor={requestFor}
               videoId={id}
+              movie={movieData || movie}
             />
             <BtnsControls
               btnAppereance={btnAppereance}

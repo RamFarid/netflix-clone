@@ -14,6 +14,7 @@ import MobileHeader from '../../../Components/Private/Header/MobileHeader'
 import { useEffect } from 'react'
 import usePopup from '../../../Hooks/usePopup'
 import PopupInfo from '../../../Components/Models/PopupInfo'
+import ListContextProvider from '../../../Contexts/ListContext'
 const APP_CONTAINER_STYLES = {
   color: '#fff',
 }
@@ -40,19 +41,21 @@ function Browse() {
   }, [title, requestFor])
   return (
     <TrendingdDataProvider>
-      <div ref={rootRef} className='semi-ref'>
-        <BrowserView>
-          <Header />
-        </BrowserView>
-        <MobileView>
-          <MobileHeader />
-        </MobileView>
-        <main style={APP_CONTAINER_STYLES}>
-          <Outlet />
-        </main>
-        <Footer />
-      </div>
-      {popupInfo && <PopupInfo handleClosingTab={handleClosingTab} />}
+      <ListContextProvider>
+        <div ref={rootRef} className='semi-ref'>
+          <BrowserView>
+            <Header />
+          </BrowserView>
+          <MobileView>
+            <MobileHeader />
+          </MobileView>
+          <main style={APP_CONTAINER_STYLES}>
+            <Outlet />
+          </main>
+          <Footer />
+        </div>
+        {popupInfo && <PopupInfo handleClosingTab={handleClosingTab} />}
+      </ListContextProvider>
     </TrendingdDataProvider>
   )
 }

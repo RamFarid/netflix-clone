@@ -11,7 +11,7 @@ function TVShows() {
   return (
     <React.Fragment>
       {isBrowser && <ScreenVideo requestFor='tv' />}
-      <SubHeader genre='TVshows' isMovies={false} />
+      {isBrowser && <SubHeader genre='TVshows' isMovies={false} />}
       {Request.tvShows.map((slider, id) => {
         if (id === 0) {
           return (

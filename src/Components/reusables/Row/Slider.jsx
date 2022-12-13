@@ -37,7 +37,6 @@ const BREAKPOINTS = {
 
 function Slider({ category, title, requestFor, mt }) {
   const movies = useGetSlider(category)
-  // console.log(movies, title)
   const handleTitle = () => {
     if (isBrowser === true) {
       stylesGenerator()
@@ -63,12 +62,7 @@ function Slider({ category, title, requestFor, mt }) {
             movies.map((movie) => {
               return (
                 <SwiperSlide key={movie.id}>
-                  <VideoBItem
-                    img={Request.imgGenerator(movie)}
-                    alt={Request.titleGenerator(movie)}
-                    videoId={movie.id}
-                    requestFor={requestFor}
-                  />
+                  <VideoBItem movie={movie} requestFor={requestFor} />
                 </SwiperSlide>
               )
             })}

@@ -162,6 +162,10 @@
   cursor: pointer;
 }
 
+.Header__Browse .right .user .user-popup #signout:hover {
+  text-decoration: underline;
+}
+
 .Header__Browse .right .user .user-popup .controls .control-item {
   cursor: pointer;
   display: flex;

@@ -2,7 +2,9 @@ import React from 'react'
 
 import '../../../Styles/Browse/pop-up-info.css'
 import { useSearchParams } from 'react-router-dom'
-function VideoBItem({ img, alt, videoId, requestFor, normalView }) {
+import { Request } from '../../../APIs/apiMain'
+
+function VideoBItem({ movie, requestFor }) {
   // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams()
   return (
@@ -11,10 +13,15 @@ function VideoBItem({ img, alt, videoId, requestFor, normalView }) {
         <div
           className='bg-img-co'
           onClick={() =>
-            setSearchParams({ title: videoId, requestFor: requestFor })
+            setSearchParams({ title: movie.id, requestFor: requestFor })
           }
         >
-          {<img src={img} alt={alt} />}
+          {
+            <img
+              src={Request.imgGenerator(movie)}
+              alt={Request.titleGenerator(movie)}
+            />
+          }
         </div>
       </div>
     </React.Fragment>

@@ -1,20 +1,27 @@
 .my-list {
   margin-top: 69px;
-  padding: 0 60px;
-  min-height: 130vh;
   display: flex;
   flex-direction: column;
 }
 
 .my-list .LIST {
+  padding: 0 60px;
+  margin-top: 0.9rem;
   flex-grow: 1;
   display: flex;
-  justify-content: center;
+  gap: 10px;
 }
 
-.my-list .LIST h2 {
+.my-list h2 {
   position: sticky;
   top: 69px;
+  padding: 10px 60px;
+  background-color: #141414;
+  z-index: 1;
+}
+
+.my-list .LIST .SLider__Item {
+  max-width: 230px;
 }
 
 .my-list .LIST .null {

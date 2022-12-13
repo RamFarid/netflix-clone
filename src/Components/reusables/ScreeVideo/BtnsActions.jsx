@@ -5,7 +5,7 @@ import { useSearchParams } from 'react-router-dom'
 import AddBtn from '../AddBtn'
 import LikeBtn from '../LikeBtn'
 
-function BtnsActions({ playAction, isPopup, requestFor, videoId }) {
+function BtnsActions({ playAction, isPopup, requestFor, videoId, movie }) {
   // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams()
   const handleBtn = () => {
@@ -18,7 +18,7 @@ function BtnsActions({ playAction, isPopup, requestFor, videoId }) {
       </button>
       {isPopup === true ? (
         <React.Fragment>
-          <AddBtn />
+          <AddBtn movie={movie} />
           <LikeBtn />
         </React.Fragment>
       ) : (
