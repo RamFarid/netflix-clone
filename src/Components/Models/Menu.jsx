@@ -1,11 +1,10 @@
 import React, { useContext } from 'react'
 import ReactDOM from 'react-dom'
 import ram from '../../Assets/Ram.jpeg'
-import Genres from '../../APIs/genres'
 import { AuthContext } from '../../Contexts/AuthContext'
 
 import '../../Styles/Browse/mobile-menu.css'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 function Menu({ setMenu }) {
   const redirectTo = useNavigate()
   const auth = useContext(AuthContext)
