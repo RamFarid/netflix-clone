@@ -1,28 +1,43 @@
 import React from 'react'
 
 import '../../../Styles/Browse/pop-up-info.css'
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Request } from '../../../APIs/apiMain'
+import { isBrowser, isMobile } from 'react-device-detect'
 
 function VideoBItem({ movie, requestFor }) {
+  const redirectTo = useNavigate()
   // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams()
+  const handleOpenenigFilm = () => {
+    if (isBrowser) {
+      setSearchParams({ title: movie.id, requestFor: requestFor })
+    }
+    if (isMobile) {
+      if (requestFor === 'tv') {
+        redirectTo(`/browse/tv/${movie.id}`)
+        return
+      }
+      redirectTo(`/browse/movie/${movie.id}`)
+    }
+  }
   return (
     <React.Fragment>
-      <div className='SLider__Item'>
+      <div className='SLider__Item' onClick={handleOpenenigFilm}>
+        <div
+          className='figc-alt'
+          style={Request.imgGenerator(movie) ? {} : { zIndex: '1' }}
+        >
+          {Request.titleGenerator(movie)}
+        </div>
         <div
           className='bg-img-co'
-          onClick={() =>
-            setSearchParams({ title: movie.id, requestFor: requestFor })
+          style={
+            Request.imgGenerator(movie)
+              ? { backgroundImage: `url("${Request.imgGenerator(movie)}")` }
+              : {}
           }
-        >
-          {
-            <img
-              src={Request.imgGenerator(movie)}
-              alt={Request.titleGenerator(movie)}
-            />
-          }
-        </div>
+        ></div>
       </div>
     </React.Fragment>
   )

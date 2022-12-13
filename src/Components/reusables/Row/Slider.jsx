@@ -2,7 +2,6 @@ import React from 'react'
 import { Navigation, Pagination, FreeMode } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import VideoBItem from './VideoBItem'
-import VideoMItem from './VideoMItem'
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -12,7 +11,6 @@ import '../../../Styles/Browse/slider.css'
 import '../../../Styles/Browse/slider-item.css'
 import { isMobile, isBrowser } from 'react-device-detect'
 import useGetSlider from '../../../Hooks/useGetSlider'
-import { Request } from '../../../APIs/apiMain'
 import PopupTitleInfo from '../../../Components/Models/PopupTitleInfo'
 import usePopup from '../../../Hooks/usePopup.js'
 import { SliderSkeleton } from '../Skeletons loader/SliderSkeleton'
@@ -90,12 +88,7 @@ function Slider({ category, title, requestFor, mt }) {
             movies.map((movie) => {
               return (
                 <SwiperSlide key={movie.id}>
-                  <VideoMItem
-                    img={Request.imgGenerator(movie)}
-                    alt={Request.titleGenerator(movie)}
-                    videoId={movie.id}
-                    requestFor={requestFor}
-                  />
+                  <VideoBItem movie={movie} requestFor={requestFor} />
                 </SwiperSlide>
               )
             })
