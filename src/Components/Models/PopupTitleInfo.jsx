@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
-import { motion } from 'framer-motion'
 import VideoBItem from '../reusables/Row/VideoBItem'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 import '../../Styles/Browse/pop-up-title-info.css'
 import tmdb from '../../APIs/apiMain'
 import { useRef } from 'react'
+import { toast } from 'react-toastify'
 function PopupTitleInfo({ handleClosingTab, title, fetchTitle }) {
   const pagesRef = useRef(1)
   const [isEnd, setIsEnd] = useState(true)
@@ -31,6 +31,7 @@ function PopupTitleInfo({ handleClosingTab, title, fetchTitle }) {
       })
       .catch((e) => {
         console.log(e)
+        toast.error(new Error(e.response.data.status_message))
         console.log('Error fetch')
       })
   }
@@ -39,25 +40,27 @@ function PopupTitleInfo({ handleClosingTab, title, fetchTitle }) {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+  useEffect(() => {
+    console.log(movies.length)
+    console.log(isEnd)
+  }, [movies, isEnd])
   return ReactDOM.createPortal(
-    <motion.section className='pop-up-info' onClick={handleClosingTab}>
+    <section className='pop-up-info' onClick={handleClosingTab}>
       <div className='data'>
         <h2>{title}</h2>
-        <div>
-          <InfiniteScroll
-            dataLength={movies.length}
-            hasMore={isEnd}
-            next={getData}
-            className='system'
-            loader={<div>Fetching Data...</div>}
-          >
-            {movies.map((movie, id) => {
-              return <VideoBItem movie={movie} key={id + 1} />
-            })}
-          </InfiniteScroll>
-        </div>
+        <InfiniteScroll
+          dataLength={movies.length}
+          hasMore={isEnd}
+          next={() => console.log('In boom!')}
+          className='system'
+          loader={<div>Fetching Data...</div>}
+        >
+          {movies.map((movie, id) => {
+            return <VideoBItem movie={movie} key={id + 1} />
+          })}
+        </InfiniteScroll>
       </div>
-    </motion.section>,
+    </section>,
     document.getElementById('pop-up-info')
   )
 }
