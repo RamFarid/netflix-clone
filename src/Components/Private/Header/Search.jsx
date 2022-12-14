@@ -1,30 +1,31 @@
-import React from 'react'
-import { useState } from 'react'
-import { useEffect } from 'react'
-import { useRef } from 'react'
+import React, { useState, useRef } from 'react'
+import { useContext } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
+import { useSearchParams } from 'react-router-dom'
+import { SearchListContext } from '../../../Contexts/SearchListContext'
+
 function Search() {
+  const { setSearchItems } = useContext(SearchListContext)
+  const [searchParams, setSearchParams] = useSearchParams()
   const searchInput = useRef()
   const [focus, setFocus] = useState(true)
-  useEffect(() => {
-    const searchInputValue = searchInput.current
-    const focusHandle = () => {
-      // console.log('Focused')
-      setFocus(false)
-    }
-    const blurHandle = () => {
-      // console.log('Blured')
-      searchInputValue.value = ''
+  const focusHandle = (e) => {
+    setFocus(false)
+  }
+  const blurHandle = (e) => {
+    if (e.target.value.length === 0) {
       setFocus(true)
     }
-    searchInputValue.addEventListener('focus', focusHandle)
-    searchInputValue.addEventListener('blur', blurHandle)
-
-    return () => {
-      searchInputValue.removeEventListener('focus', focusHandle)
-      searchInputValue.removeEventListener('blur', blurHandle)
+  }
+  const changeHandle = (e) => {
+    const inputValue = e.target.value
+    if (inputValue.length !== 0) {
+      setSearchParams({ ...searchParams, query: inputValue.trim() })
+    } else {
+      setSearchItems([])
+      setSearchParams({ ...searchParams })
     }
-  })
+  }
   return (
     <div className={focus ? 'search-co active' : 'search-co'}>
       <AiOutlineSearch
@@ -33,6 +34,9 @@ function Search() {
         onClick={() => searchInput.current.focus()}
       />
       <input
+        onChange={changeHandle}
+        onFocus={focusHandle}
+        onBlur={blurHandle}
         ref={searchInput}
         type='search'
         name='search'

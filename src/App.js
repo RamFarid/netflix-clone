@@ -13,7 +13,7 @@ import { useEffect } from 'react'
 import Title from './Routes/Private/Browse/Title'
 import AccessRoutes from './Routes/Private/AccessRoutes'
 import AnonymousRoute from './Routes/Private/AnonymousRoute'
-
+import SearchListContextProvider from './Contexts/SearchListContext'
 function App() {
   useEffect(() => {
     console.log(
@@ -32,7 +32,14 @@ function App() {
         </Route>
 
         <Route element={<AccessRoutes />}>
-          <Route path='/browse' element={<Browse />}>
+          <Route
+            path='/browse'
+            element={
+              <SearchListContextProvider>
+                <Browse />
+              </SearchListContextProvider>
+            }
+          >
             <Route index element={<Home />} />
             <Route path='tv-shows' element={<TVShows />} />
             <Route path='movies' element={<Movies />} />

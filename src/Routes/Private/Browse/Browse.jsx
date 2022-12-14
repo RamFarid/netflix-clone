@@ -15,11 +15,16 @@ import usePopup from '../../../Hooks/usePopup'
 import PopupInfo from '../../../Components/Models/PopupInfo'
 import ListContextProvider from '../../../Contexts/ListContext'
 import { toast, ToastContainer, Zoom } from 'react-toastify'
+import tmdb from '../../../APIs/apiMain'
+import { SearchListContext } from '../../../Contexts/SearchListContext'
+import SearchList from '../../../Components/Models/SearchList'
+
 const APP_CONTAINER_STYLES = {
   color: '#fff',
 }
 
 function Browse() {
+  const { setSearchItems } = useContext(SearchListContext)
   const redirectTo = useNavigate()
   const rootRef = useContext(RootContext)
   // eslint-disable-next-line no-unused-vars
@@ -28,6 +33,8 @@ function Browse() {
     usePopup(rootRef)
   const title = searchParams.get('title')
   const requestFor = searchParams.get('requestFor')
+  const searchQuery = searchParams.get('query')
+
   useEffect(() => {
     if (navigator.onLine === false) {
       toast.error("You're Offline", {
@@ -46,6 +53,35 @@ function Browse() {
       window.removeEventListener('offline', offLineHandler)
     }
   }, [])
+
+  useEffect(() => {
+    const getData = async () => {
+      tmdb
+        .get('search/multi', {
+          params: {
+            query: searchQuery.trim(),
+            include_adult: true,
+          },
+        })
+        .then((res) => {
+          setSearchItems(res.data.results)
+          console.log(res.data.results)
+        })
+        .catch((e) => console.log(e))
+    }
+    const debounceSearch = setTimeout(() => {
+      if (searchQuery) {
+        document.body.classList.add('noscroll')
+        getData()
+      }
+    }, 1000)
+
+    return () => {
+      clearTimeout(debounceSearch)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchQuery])
+
   useEffect(() => {
     if (title && requestFor) {
       if (isMobile === true) {
@@ -87,6 +123,7 @@ function Browse() {
           transition={Zoom}
         />
         {popupInfo && <PopupInfo handleClosingTab={handleClosingTab} />}
+        {searchQuery && <SearchList />}
       </ListContextProvider>
     </TrendingdDataProvider>
   )

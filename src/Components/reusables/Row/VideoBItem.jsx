@@ -7,11 +7,15 @@ import { isBrowser, isMobile } from 'react-device-detect'
 
 function VideoBItem({ movie, requestFor }) {
   const redirectTo = useNavigate()
-  // eslint-disable-next-line no-unused-vars
+
   const [searchParams, setSearchParams] = useSearchParams()
   const handleOpenenigFilm = () => {
     if (isBrowser) {
-      setSearchParams({ title: movie.id, requestFor: requestFor })
+      setSearchParams({
+        ...searchParams,
+        title: movie.id,
+        requestFor: requestFor,
+      })
     }
     if (isMobile) {
       if (requestFor === 'tv') {
