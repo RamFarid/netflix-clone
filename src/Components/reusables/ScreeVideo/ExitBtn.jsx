@@ -1,18 +1,13 @@
 import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
-import { toast } from 'react-toastify'
+import { useSearchParams } from 'react-router-dom'
 
 function ExitBtn({ isPopup }) {
+  // eslint-disable-next-line no-unused-vars
+  const [searchParams, setSearchParams] = useSearchParams()
   if (!isPopup) return
   return (
-    <div
-      className='exit-btn'
-      onClick={() =>
-        toast.success('كسلت اعمله ارجع باك او دوس علي الطبقة السوده', {
-          icon: '😀',
-        })
-      }
-    >
+    <div className='exit-btn' onClick={() => setSearchParams({})}>
       <AiOutlineClose />
     </div>
   )
