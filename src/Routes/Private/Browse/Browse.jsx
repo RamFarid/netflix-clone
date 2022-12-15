@@ -2,7 +2,6 @@ import React from 'react'
 import { Outlet, useNavigate, useSearchParams } from 'react-router-dom'
 import Footer from '../../../Components/Private/Footer'
 import Header from '../../../Components/Private/Header/Header'
-import { RootContext } from '../../../Contexts/RootContext'
 import TrendingdDataProvider from '../../../Contexts/TrendingdData'
 import '../../../Styles/Browse/header.css'
 import '../../../Styles/Browse/browse.css'
@@ -26,15 +25,14 @@ const APP_CONTAINER_STYLES = {
 function Browse() {
   const { setSearchItems } = useContext(SearchListContext)
   const redirectTo = useNavigate()
-  const rootRef = useContext(RootContext)
-  // eslint-disable-next-line no-unused-vars
-  const [searchParams, setSearchParams] = useSearchParams()
-  const { popupInfo, setPopupInfo, stylesGenerator, handleClosingTab } =
-    usePopup(rootRef)
+
+  const [searchParams] = useSearchParams()
+  const { popupInfo, setPopupInfo, stylesGenerator } = usePopup()
   const title = searchParams.get('title')
   const requestFor = searchParams.get('requestFor')
   const searchQuery = searchParams.get('query')
 
+  // Adding event listener for online and offline mode
   useEffect(() => {
     if (navigator.onLine === false) {
       toast.error("You're Offline", {
@@ -54,6 +52,7 @@ function Browse() {
     }
   }, [])
 
+  // Search hanldes
   useEffect(() => {
     const getData = async () => {
       tmdb
@@ -82,6 +81,7 @@ function Browse() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery])
 
+  // Pop up handles
   useEffect(() => {
     if (title && requestFor) {
       if (isMobile === true) {
@@ -100,7 +100,7 @@ function Browse() {
   return (
     <TrendingdDataProvider>
       <ListContextProvider>
-        <div ref={rootRef} className='semi-ref'>
+        <div className='semi-ref'>
           <BrowserView>
             <Header />
           </BrowserView>
@@ -122,7 +122,7 @@ function Browse() {
           theme='dark'
           transition={Zoom}
         />
-        {popupInfo && <PopupInfo handleClosingTab={handleClosingTab} />}
+        {popupInfo && <PopupInfo />}
         {searchQuery && <SearchList />}
       </ListContextProvider>
     </TrendingdDataProvider>

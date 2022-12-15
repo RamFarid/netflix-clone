@@ -43,6 +43,14 @@ body {
   overflow: hidden;
 }
 
+.pop-up-animation {
+  animation: popup 0.3s forwards;
+}
+
+.pop-up-animation-reverse {
+  animation: popup 0.3s forwards reverse !important;
+}
+
 @keyframes popup {
   0% {
     transform: scale(0.8);

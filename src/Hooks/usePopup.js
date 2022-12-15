@@ -3,7 +3,6 @@ import { useState } from 'react'
 function usePopup() {
   const [popupInfo, setPopupInfo] = useState(false)
   const stylesGenerator = () => {
-    // احطياتي!!
     setPopupInfo(true)
     document.body.classList.add('noscroll')
   }

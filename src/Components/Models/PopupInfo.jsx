@@ -21,7 +21,7 @@ import {
 } from '../reusables/Skeletons loader/PopupSkeleton'
 import { toast } from 'react-toastify'
 
-function PopupInfo({ handleClosingTab }) {
+function PopupInfo() {
   const redirectTo = useNavigate()
   const [searchParams, setSearchParams] = useSearchParams()
   const videoId = searchParams.get('title')
@@ -98,10 +98,8 @@ function PopupInfo({ handleClosingTab }) {
     <section
       className='pop-up-info'
       onClick={(e) => {
-        handleClosingTab(e)
         if (e.target.className === e.currentTarget.className) {
           setSearchParams({})
-          redirectTo(window.location.pathname)
         }
       }}
     >

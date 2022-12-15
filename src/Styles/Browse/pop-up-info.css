@@ -39,7 +39,6 @@
   margin: 30px auto 0;
   border-radius: 6px;
   overflow: hidden;
-  animation: popup 0.3s forwards;
 }
 
 #pop-up-info .pop-up-info .data figcaption {
