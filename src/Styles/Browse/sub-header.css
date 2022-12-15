@@ -10,7 +10,7 @@
   height: 69px;
   gap: 45px;
   user-select: none;
-  z-index: 999;
+  z-index: 89;
   transition: background-color 0.3s ease;
 }
 
