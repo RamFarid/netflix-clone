@@ -22,6 +22,7 @@ function Search() {
     if (inputValue.length !== 0) {
       setSearchParams({ ...searchParams, query: inputValue.trim() })
     } else {
+      document.body.classList.remove("noscroll")
       setSearchItems([])
       setSearchParams({ ...searchParams })
     }
