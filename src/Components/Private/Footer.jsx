@@ -31,7 +31,7 @@ function Footer() {
           {code ? '045-309' : 'Service Code'}
         </button>
         <div className='copyrights'>
-          &copy; 1997-{new Date().getFullYear()} Netflix, Inc.
+          &copy; 1997-{new Date().getFullYear()} Netblix, Inc.
         </div>
       </div>
     </footer>

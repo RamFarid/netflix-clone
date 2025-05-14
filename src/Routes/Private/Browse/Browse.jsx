@@ -92,7 +92,7 @@ function Browse() {
     } else {
       setPopupInfo(false)
       document.body.classList.remove('noscroll')
-      document.title = 'Netflix By Ram'
+      document.title = 'Netblix By Ram'
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

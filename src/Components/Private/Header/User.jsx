@@ -54,7 +54,7 @@ function User() {
           </div>
         </div>
         <div id='signout' onClick={handleSignningOut}>
-          Sign Out of Netflix
+          Sign Out of Netblix
         </div>
       </div>
     </div>

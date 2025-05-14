@@ -27,7 +27,7 @@ function MobileHeader() {
   return (
     <header className='Header__Mobile'>
       <GiHamburgerMenu onClick={onClick} />
-      <img src={LOGO} alt='Netflix' />
+      <img src={LOGO} alt='Netblix' />
       <input
         type='search'
         name='search'

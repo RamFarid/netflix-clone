@@ -75,7 +75,7 @@ function PopupInfo() {
   const seasons = movie?.seasons?.length
   const time = movie?.runtime
   useEffect(() => {
-    document.title = Request.titleGenerator(movie) || 'Netflix By Ram'
+    document.title = Request.titleGenerator(movie) || 'Netblix By Ram'
   }, [movie])
   useEffect(() => {
     if (error.isError) {

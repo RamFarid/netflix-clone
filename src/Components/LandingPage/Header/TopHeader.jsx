@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function TopHeader() {
   return (
     <div className='header__top'>
-      <img src={LOGO} alt='Netflix' />
+      <img src={LOGO} alt='Netblix' />
       <LangInput />
       <Link to='/login' className='signin'>
         Sign in

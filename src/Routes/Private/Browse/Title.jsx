@@ -16,7 +16,7 @@ function Title() {
   const location = useLocation()
   const params = useParams()
   useEffect(() => {
-    document.title = Request.titleGenerator(film) || 'Netflix'
+    document.title = Request.titleGenerator(film) || 'Netblix'
   }, [film])
   useEffect(() => {
     const getMovie = async () => {

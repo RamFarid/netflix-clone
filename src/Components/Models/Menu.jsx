@@ -33,7 +33,7 @@ function Menu({ setMenu }) {
           <div className='profile-item'>Account</div>
           <div className='profile-item'>Help Cneter</div>
           <div className='profile-item' onClick={handleSignOut}>
-            Sign Out Of Netflix
+            Sign Out Of Netblix
           </div>
         </div>
         <NavLink className='menu-item' to='/browse' end>

@@ -10,7 +10,7 @@ function usePopup() {
     if (e.target.className === e.currentTarget.className) {
       setPopupInfo(false)
       document.body.classList.remove('noscroll')
-      document.title = 'Netflix By Ram'
+      document.title = 'Netblix By Ram'
     }
   }
   return {

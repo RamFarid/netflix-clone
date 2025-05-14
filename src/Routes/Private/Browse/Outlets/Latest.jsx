@@ -20,7 +20,7 @@ function Latest() {
           color: 'red',
         }}
       >
-        Go to Netflix.com
+        Go to Netblix.com
       </Link>
     </div>
   )

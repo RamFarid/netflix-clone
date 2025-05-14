@@ -57,6 +57,6 @@ export const footerLinks = [
   },
   {
     link: '',
-    title: 'Only on Netflix',
+    title: 'Only on Netblix',
   },
 ]

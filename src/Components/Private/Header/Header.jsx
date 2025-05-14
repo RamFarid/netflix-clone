@@ -12,7 +12,7 @@ function Header() {
   return (
     <header className={isTop()}>
       <div className='left'>
-        <img src={LOGO} alt='Netflix' />
+        <img src={LOGO} alt='Netblix' />
         <nav>
           {navLinks.map(({ link, text }, id) => {
             return (

@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 export const TitlePageContext = createContext()
 
 function TitlePageContextProvider({ children }) {
-  const [titlePage, setTitlePage] = useState('Netflix')
+  const [titlePage, setTitlePage] = useState('Netblix')
   useEffect(() => {
     document.title = titlePage
   }, [titlePage])

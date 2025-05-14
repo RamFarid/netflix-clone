@@ -22,11 +22,11 @@ function AppLaunch() {
   }
   return (
     <div className='app-launch'>
-      <div className='sponsore'>Watch Netflix on your phone or tablet</div>
+      <div className='sponsore'>Watch Netblix on your phone or tablet</div>
       <button onClick={appType}>Get the free app</button>
       <Link className='website' to='/browse'>
         <RiExternalLinkFill size={30} />
-        Go to Netflix.com
+        Go to Netblix.com
       </Link>
     </div>
   )
